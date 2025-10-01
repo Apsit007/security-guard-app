@@ -1,0 +1,12 @@
+/* Basic reset */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+* {
+  box-sizing: border-box;
+}
+
+/* TomTom Maps CSS (via Vite import in main.tsx is recommended) */
