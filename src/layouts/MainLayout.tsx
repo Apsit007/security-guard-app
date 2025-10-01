@@ -6,7 +6,7 @@ export default function MainLayout() {
         <div className="flex flex-col h-screen">
             {/* Navbar */}
             <nav className="bg-blue-900 text-white flex items-center px-6 h-14 shadow-md">
-                <div className="font-bold text-lg mr-8">HR System</div>
+                <div className="font-bold text-lg mr-8">Security Guard</div>
                 <ul className="flex gap-6">
                     <li>
                         <NavLink to="/dashboard" className="hover:text-yellow-400">
@@ -14,18 +14,13 @@ export default function MainLayout() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to="/personnel" className="hover:text-yellow-400">
-                            จัดการบุคลากร
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/projects" className="hover:text-yellow-400">
-                            จัดการโครงการ
+                        <NavLink to="/reports" className="hover:text-yellow-400">
+                            Reports
                         </NavLink>
                     </li>
                     <li>
                         <NavLink to="/settings" className="hover:text-yellow-400">
-                            ตั้งค่า
+                            Settings
                         </NavLink>
                     </li>
                 </ul>
@@ -33,7 +28,7 @@ export default function MainLayout() {
 
             {/* Main contents */}
             <main className="flex-1 overflow-y-auto bg-gray-100 p-4">
-                <Outlet /> {/* จะเปลี่ยนเป็นแต่ละ page */}
+                <Outlet />
             </main>
         </div>
     );
