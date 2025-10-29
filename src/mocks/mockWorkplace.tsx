@@ -1,0 +1,211 @@
+// Types
+import type {
+  Workplace
+} from "../features/types";
+
+// Mocks
+import { mockMorningShift, mockNightShift } from "../mocks/mockShiftWorker";
+
+export const mockWorkplaces: Workplace[] = [
+  {
+    id: 1,
+    patrolId: 1,
+    patrolName: "1A",
+    workplaceId: "101",
+    name: "1012 หมู่บ้านอยู่สบาย ราชพฤกษ์ 1",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โครงการบ้าน จำนวน 80 หลังคาเรือน",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-17", morning: 4, night: 2, morningWorker: [
+        {
+          id: 1,
+          prefix: "นาย",
+          firstName: "สายชล",
+          lastName: "ปกป้องทรัพย์",
+          startTime: "07:00",
+          endTime: "19:00",
+          note: "",
+          totalHours: 12,
+        },
+        {
+          id: 2,
+          prefix: "นาย",
+          firstName: "สายชล",
+          lastName: "ปกป้องทรัพย์",
+          startTime: "07:00",
+          endTime: "19:00",
+          note: "",
+          totalHours: 12,
+        },
+      ], 
+        nightWorker: mockNightShift
+      },
+      { date: "2025-10-12", morning: 6, night: 4, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-02", rejected: true, rejectedDetail: "ไม่อนุมัติ เนื่องจาก นายสายชลมีพฤติกรรม ไม่เหมาะสม กำลังพิจารณาพักงาน", morningWorker: mockMorningShift },
+    ]
+  },
+  {
+    id: 2,
+    patrolId: 1,
+    patrolName: "1A",
+    workplaceId: "102",
+    name: "1013 หมู่บ้านอยู่สบาย ราชพฤกษ์ 2",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โครงการบ้าน จำนวน 60 หลังคาเรือน",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-10", morning: 7, night: 5, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 3,
+    patrolId: 1,
+    patrolName: "1A",
+    workplaceId: "103",
+    name: "1014 หมู่บ้านอุ่นสุข",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โครงการบ้าน จำนวน 40 หลังคาเรือน",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-17", morning: 4, night: 2, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 4,
+    patrolId: 2,
+    patrolName: "1B",
+    workplaceId: "104",
+    name: "1015 หมู่บ้านฉัตรเพชร 1",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โครงการบ้าน จำนวน 20 หลังคาเรือน",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-01-03",
+    contractEndDate: "2025-12-03",
+    status: 0,
+    workSchedule: [
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 5,
+    patrolId: 2,
+    patrolName: "1B",
+    workplaceId: "105",
+    name: "1016 หมู่บ้านฉัตรเพชร 2",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โครงการบ้าน จำนวน 20 หลังคาเรือน",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-04", waitApprove: true, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-02", rejected: true, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+    ]
+  },
+  {
+    id: 6,
+    patrolId: 3,
+    patrolName: "3A",
+    workplaceId: "106",
+    name: "2001 โกดัง น.ส.ทรายทอง",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โกดังสินค้ากลั่นน้ำ",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-10", morning: 7, night: 5, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 7,
+    patrolId: 2,
+    patrolName: "2B",
+    workplaceId: "107",
+    name: "2002 โกดัง น.ทรัพย์สมบัติ",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โกดังสินค้ากลั่นน้ำ",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 0,
+    workSchedule: [
+      { date: "2025-10-17", morning: 4, night: 2, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 8,
+    patrolId: 2,
+    patrolName: "2A",
+    workplaceId: "108",
+    name: "2003 โกดัง น.สินศักดิ์",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โกดังสินค้ากลั่นน้ำ",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-17", morning: 4, night: 2, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-12", morning: 6, night: 4, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+  {
+    id: 9,
+    patrolId: 3,
+    patrolName: "3B",
+    workplaceId: "109",
+    name: "2004 โกดัง บ. MTB",
+    address: "เลขที่ 123 หมู่ 3 ต.ศิลา อ.เมือง จ.ขอนแก่น 40000",
+    detail: "โกดังสินค้ากลั่นน้ำ",
+    latitude: 13.9324164,
+    longitude: 100.3640082,
+    contractStartDate: "2025-12-03",
+    contractEndDate: "2025-12-03",
+    status: 1,
+    workSchedule: [
+      { date: "2025-10-17", morning: 4, night: 2, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-12", morning: 6, night: 4, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-04", waitApprove: true },
+      { date: "2025-10-02", rejected: true },
+    ]
+  },
+];

@@ -1,0 +1,4 @@
+export const WORKER_INFO_ROW_PER_PAGES = [50, 100, 500];
+export const PATROL_INFO_ROW_PER_PAGES = [50, 100, 500];
+export const MANAGE_PATROL_ROW_PER_PAGES = [50, 100, 500];
+export const ADD_WORKER_ROW_PER_PAGES = [50, 100, 500];
