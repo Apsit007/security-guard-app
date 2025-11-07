@@ -37,7 +37,7 @@ import AddIcon from '@mui/icons-material/Add';
 import SaveIcon from "../../assets/icons/save.png";
 import ClearIcon from '@mui/icons-material/Clear';
 import RejectedDetailIcon from "../../assets/icons/reject-detail.png";
-import { Copy, Search, Trash2 } from "lucide-react";
+import { Search, Trash2 } from "lucide-react";
 
 // Types
 import type {
@@ -355,7 +355,7 @@ const ManageWorkSchedule: React.FC<ManageWorkScheduleProps> = ({}) => {
             <p className='text-[#133462] text-[16px] font-medium'>{`ผลการค้นหา : ${50} รายการ`}</p>
           </div>
 
-          <div className={`flex flex-col ${isAccordionOpen ? "h-[49vh]" : "h-[78.5vh]"} overflow-y-auto`}>
+          <div className={`flex flex-col ${isAccordionOpen ? "h-[50.6vh]" : "h-[80.3vh]"} overflow-y-auto`}>
             {
               workplaceData.map((data, index) => {
                 return (
@@ -403,13 +403,14 @@ const ManageWorkSchedule: React.FC<ManageWorkScheduleProps> = ({}) => {
             </div>
           </div>
 
-          <div className='w-full h-full'>
+          <div className='relative w-full h-full'>
             <Calendar 
-              divHeight='70vh' 
+              divHeight='71vh' 
               minHeight='550px'
               workSchedule={placeSelect?.workSchedule}
               onDateSelect={onDateSelect}
             />
+            <p className='absolute text-[20px] font-semibold text-[#0D3063] top-2 left-0'>ปฏิทินทำงาน</p>
           </div>
         </div>
 

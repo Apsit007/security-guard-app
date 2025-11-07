@@ -48,6 +48,7 @@ export const mockWorkplaces: Workplace[] = [
       { date: "2025-10-12", morning: 6, night: 4, morningWorker: mockMorningShift, nightWorker: mockNightShift },
       { date: "2025-10-15", morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
       { date: "2025-10-04", waitApprove: true, morningWorker: mockMorningShift, nightWorker: mockNightShift },
+      { date: "2025-10-06", problem: true, morning: 5, night: 6, morningWorker: mockMorningShift, nightWorker: mockNightShift },
       { date: "2025-10-02", rejected: true, rejectedDetail: "ไม่อนุมัติ เนื่องจาก นายสายชลมีพฤติกรรม ไม่เหมาะสม กำลังพิจารณาพักงาน", morningWorker: mockMorningShift },
     ]
   },

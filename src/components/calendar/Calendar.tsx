@@ -18,6 +18,7 @@ import ArrowLeftIcon from "../../assets/icons/left-arrow.png";
 import ArrowRightIcon from "../../assets/icons/right-arrow.png";
 import WarningIcon from "../../assets/icons/warning.png";
 import AlertIcon from "../../assets/icons/alert.png";
+import UnApproveIcon from "../../assets/icons/unapprove.png";
 
 // Types
 import type {
@@ -31,6 +32,8 @@ type CalendarProps = {
   minHeight?: string;
   isShowLegend?: boolean;
   bgColor?: string;
+  yearSelectColor?: string;
+  yearSelectBgColor?: string;
   weekDayLabelColor?: string;
   weekDayLabelBgColor?: string;
   pickersDayBgColor?: string;
@@ -47,6 +50,8 @@ const Calendar: React.FC<CalendarProps> = ({
   bgColor = "#FFF",
   weekDayLabelColor = "#FFFFFF",
   weekDayLabelBgColor = "#133462",
+  yearSelectColor = "#133462",
+  yearSelectBgColor = "#FFFFFF",
   pickersDayBgColor = "transparent",
   isNoDataDisable = false,
   workSchedule,
@@ -87,11 +92,12 @@ const Calendar: React.FC<CalendarProps> = ({
         {/* Legend */}
         {
           isShowLegend && (
-            <Box sx={{ display: "flex", gap: 1, alignItems: "center", position: "absolute", top: "25px" }}>
+            <Box sx={{ display: "flex", gap: 1, alignItems: "center", position: "absolute", top: "54px" }}>
               <Legend color="#133462" label="กะเช้า" />
               <Legend color="#A3CBF2" label="กะดึก" />
               <Legend color="#FFB300" label="รออนุมัติ" icon={WarningIcon} alt="Warning Icon" />
-              <Legend color="#E53935" label="ไม่อนุมัติ" icon={AlertIcon} alt="Alert Icon" />
+              <Legend color="#E53935" label="ไม่อนุมัติ" icon={UnApproveIcon} alt="UnApprove Icon" />
+              <Legend color="#E53935" label="พบปัญหา" icon={AlertIcon} alt="Alert Icon" />
             </Box>
           )
         }
@@ -150,6 +156,7 @@ const Calendar: React.FC<CalendarProps> = ({
                   eveningCount={dayData?.night ?? 0}
                   waitApprove={dayData?.waitApprove ?? false}
                   rejected={dayData?.rejected ?? false}
+                  problem={dayData?.problem ?? false}
                   isNoDataDisable={isNoDataDisable}
                 />
               );
@@ -175,7 +182,7 @@ const Calendar: React.FC<CalendarProps> = ({
               fontWeight: 600,
               backgroundColor: "#133462",
               color: "#FFFFFF",
-              mt: "10px",
+              mt: "20px",
               borderRight: "#D9D9D9",
               borderWidth: "1px"
             },
@@ -190,6 +197,21 @@ const Calendar: React.FC<CalendarProps> = ({
               fontWeight: 700,
               border: "1px solid #F2F2F2",
               backgroundColor: pickersDayBgColor,
+            },
+            "& .MuiYearCalendar-root": {
+              fontSize: "20px",
+              fontWeight: 600,
+              minHeight: `${minHeight} !important`,
+              width: "100%",
+              mt: "20px",
+              color: yearSelectColor,
+              backgroundColor: yearSelectBgColor,
+              "& .MuiYearCalendar-button": {
+                "&.Mui-selected": {
+                  backgroundColor: "#133462 !important",
+                  color: "#FFF !important",
+                },
+              },
             },
             "& .Mui-selected": {
               color: "#124692 !important",

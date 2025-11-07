@@ -5,12 +5,14 @@ import type { PickersDayProps } from "@mui/x-date-pickers";
 // Icons
 import WarningIcon from "../../assets/icons/warning.png";
 import AlertIcon from "../../assets/icons/alert.png";
+import UnApproveIcon from "../../assets/icons/unapprove.png";
 
 interface CustomDayProps extends PickersDayProps {
   morningCount?: number;
   eveningCount?: number;
   waitApprove?: boolean;
   rejected?: boolean;
+  problem?: boolean;
   isNoDataDisable?: boolean;
 }
 
@@ -22,6 +24,7 @@ const RenderCustomDay = (props: CustomDayProps) => {
     eveningCount = 0,
     waitApprove = false,
     rejected = false,
+    problem = false,
     isNoDataDisable = false,
     ...other
   } = props;
@@ -60,11 +63,18 @@ const RenderCustomDay = (props: CustomDayProps) => {
                 {
                   rejected && (
                     <div className="flex justify-center items-center">
-                      <img src={AlertIcon} alt="Alert Icon" className="w-[20px] h-[20px]" />
+                      <img src={UnApproveIcon} alt="UnApprove Icon" className="w-[20px] h-[20px]" />
                     </div>
                   )
                 }
               </>
+            )
+          }
+          {
+            problem && (
+              <div className="flex justify-center items-center">
+                <img src={AlertIcon} alt="Alert Icon" className="w-[20px] h-[20px]" />
+              </div>
             )
           }
           <span>{props.day.date()}</span>

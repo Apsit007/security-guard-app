@@ -110,6 +110,7 @@ export interface DayInfo {
   night?: number;
   waitApprove?: boolean;
   rejected?: boolean;
+  problem?: boolean;
   rejectedDetail?: string;
   approved?: boolean;
   morningWorker?: ScheduleWorker[];
